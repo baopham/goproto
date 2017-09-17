@@ -1,0 +1,15 @@
+syntax = "proto3";
+option go_package = "github.com/baopham/goproto/summarizer";
+package summarizer;
+
+message SummarizerRequest {
+  string url = 1;
+}
+
+message Summary {
+  repeated string tags = 1;
+}
+
+service SummarizerService {
+  rpc Summarize (SummarizerRequest) returns (Summary) {}
+}
